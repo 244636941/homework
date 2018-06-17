@@ -11,10 +11,10 @@
 
             var inputNum = document.getElementById("d1").value;
             var d2 = document.getElementById("d2");
+            if (inputNum > 0 && inputNum < 10) {
+                var tab = "<table border='1' >";
 
-            var tab = "<table border='0' >";
-
-            for (var i = 1; i <= inputNum; i++) {
+                for (var i = 1; i <= inputNum; i++) {
                 tab += "<tr>";
 
                 for (var j = 1; j <= inputNum; j++) {
@@ -29,8 +29,9 @@
                 }
                 tab += "</tr>";
             }
-            tab += "</table>"
-            d2.innerHTML = tab;
+                tab += "</table>"
+                d2.innerHTML = tab;
+            } else alert("输入错误！请输入数字1 - 9");
 
         }
     </script>
@@ -38,7 +39,7 @@
 
 <body>
 
-    <input type="text" id="d1" placeholder="输入数字1-9">
+    <input type="text" id="d1" placeholder="请输入数字1-9">
     <input type="button" value="点击生成表格" onclick="getValue()">
     <div id="d2"></div>
 
